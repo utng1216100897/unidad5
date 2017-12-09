@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>#{str.formHeader}</title>
+         <style type="text/css">
+            .form-signin {
+                margin: 0 auto;
+                max-width: 330px;
+                padding: 15px;
+                
+                
+            }
+        </style>
+        
+        <style type="text/css">
+h1 {font-size:50px; color:#3A01DF; background-color: whitesmoke;} 
+h2 {font-size:50px; color:white; }
+h3 {font-size:20px; color:#FACC2E; }
+</style>
+        
+        <f:event listener="#{templateBean.checkLogin()}"
+                 type="preRenderView"></f:event>
+        
+        
+        </h:head>
+    <h:body style="padding-top: 60px; background-color: #3A01DF;">
+        <div id="page">
+            <div id="header">
+                <h1>#{str.systemTitle}</h1>
+            </div>
+            <div id="menu">
+                <h:form>
+                    <p:menubar>
+                        <p:menuitem value="Home" action="Index"></p:menuitem>
+                        <p:menuitem value="Users" action="#{userBean.list()}"></p:menuitem>
+                        <p:menuitem value="Modules" action="#{moduleBean.list()}"></p:menuitem>
+                        <p:menuitem value="Roles" action="#{roleBean.list()}"></p:menuitem>
+                         <p:menuitem value="Teams" action="#{teamBean.list()}"></p:menuitem>
+                          <p:menuitem value="SoccerPlayers" action="#{soccerPlayerBean.list()}"></p:menuitem>
+                          <f:facet name="options">
+                              <p:commandButton value="Logout" action="#{userBean.logout()}"/>
+                          </f:facet>
+                    </p:menubar>
+                </h:form>
+            </div>
+            <div id="cont" >
+                <ui:insert name="cont">
+                    <h2>#{str.systemWelcome}</h2>
+                </ui:insert>                
+            </div>
+            <div id="pie">
+                <p>
+                    <h3><strong>#{str.developer}</strong></h3>
+                    <h3>#{str.myName}</h3>
+                </p>
+            </div>
+        </div>
+    </h:body>
+</html>

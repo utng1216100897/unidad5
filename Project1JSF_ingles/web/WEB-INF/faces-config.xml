@@ -1,0 +1,265 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <application>
+        <resource-bundle>
+            <base-name>utng.configurations.strings</base-name>
+            <var>str</var>
+        </resource-bundle>           
+    </application>
+    
+    
+    <navigation-rule>
+        
+        
+        <from-view-id>*</from-view-id>
+        
+        <navigation-case>
+            <from-outcome>Index</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>Users</from-outcome>
+            <to-view-id>/users/list-users.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>Roles</from-outcome>
+            <to-view-id>/roles/list-roles.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>Modules</from-outcome>
+            <to-view-id>/modules/list-modules.xhtml</to-view-id>
+        </navigation-case>
+          
+        <navigation-case>
+            <from-outcome>Teams</from-outcome>
+            <to-view-id>/teams/list-teams-futbol.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>SoccerPlayers</from-outcome>
+            <to-view-id>/soccerPlayers/list-soccerPlayers.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>Logout</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        
+       
+    </navigation-rule>
+    
+    <navigation-rule>
+        
+        
+        <from-view-id>/users/form-users.xhtml</from-view-id>
+        
+        <navigation-case>
+            <from-outcome>save</from-outcome>
+            <to-view-id>/users/list-users.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>delete</from-outcome>
+            <to-view-id>/users/list-users.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>cancel</from-outcome>
+            <to-view-id>/users/list-users.xhtml</to-view-id>
+        </navigation-case>
+        
+        
+      </navigation-rule>
+        
+      <navigation-rule>
+          
+          
+            <from-view-id>/users/list-users.xhtml</from-view-id>
+            
+            <navigation-case>
+                <from-outcome>go</from-outcome>
+                <to-view-id>/users/form-users.xhtml</to-view-id>
+            </navigation-case>
+            
+            <navigation-case>
+                <from-outcome>edit</from-outcome>
+                <to-view-id>/users/form-users.xhtml</to-view-id>
+            </navigation-case>
+            
+            
+        </navigation-rule>
+       
+        <navigation-rule>
+            
+            
+             <from-view-id>/roles/form-roles.xhtml</from-view-id>
+             
+             <navigation-case>
+                <from-outcome>save</from-outcome>
+                <to-view-id>/roles/list-roles.xhtml</to-view-id>
+            </navigation-case>
+            
+             <navigation-case>
+                <from-outcome>delete</from-outcome>
+                <to-view-id>/roles/list-roles.xhtml</to-view-id>
+            </navigation-case>
+            
+             <navigation-case>
+                <from-outcome>cancel</from-outcome>
+                <to-view-id>/roles/list-roles.xhtml</to-view-id>
+            </navigation-case>
+            
+        </navigation-rule>
+        
+        <navigation-rule>
+            
+            
+             <from-view-id>/roles/list-roles.xhtml</from-view-id>
+             
+             <navigation-case>
+                <from-outcome>go</from-outcome>
+                <to-view-id>/roles/form-roles.xhtml</to-view-id>
+            </navigation-case>
+            
+             <navigation-case>
+                <from-outcome>edit</from-outcome>
+                <to-view-id>/roles/form-roles.xhtml</to-view-id>
+            </navigation-case>
+            
+        </navigation-rule>
+        
+        
+        
+        <!-- Nuevo -->
+         
+    <navigation-rule>
+        
+        
+        <from-view-id>/teams/form-teams-futbol.xhtml</from-view-id>
+        
+        <navigation-case>
+            <from-outcome>save</from-outcome>
+            <to-view-id>/teams/list-teams-futbol.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>delete</from-outcome>
+            <to-view-id>/teams/list-teams-futbol.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>cancel</from-outcome>
+            <to-view-id>/teams/list-teams-futbol.xhtml</to-view-id>
+        </navigation-case>
+        
+    </navigation-rule>
+    
+    <navigation-rule>
+        
+        
+        <from-view-id>/teams/list-teams-futbol.xhtml</from-view-id>
+        
+        <navigation-case>
+            <from-outcome>go</from-outcome>
+            <to-view-id>/teams/form-teams-futbol.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>edit</from-outcome>
+            <to-view-id>/teams/form-teams-futbol.xhtml</to-view-id>
+        </navigation-case>
+        
+    </navigation-rule>
+    
+    <navigation-rule>
+         <from-view-id>/modules/form-modules.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>save</from-outcome>
+            <to-view-id>/modules/list-modules.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>delete</from-outcome>
+            <to-view-id>/modules/list-modules.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cancel</from-outcome>
+            <to-view-id>/modules/list-modules.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+         <from-view-id>/modules/list-modules.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>go</from-outcome>
+            <to-view-id>/modules/form-modules.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>edit</from-outcome>
+            <to-view-id>/modules/form-modules.xhtml</to-view-id>
+        </navigation-case>
+        
+     </navigation-rule> 
+     
+     
+     <navigation-rule>
+        
+        
+        <from-view-id>/soccerPlayers/form-soccerPlayers.xhtml</from-view-id>
+        
+        <navigation-case>
+            <from-outcome>save</from-outcome>
+            <to-view-id>/soccerPlayers/list-soccerPlayers.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>delete</from-outcome>
+            <to-view-id>/soccerPlayers/list-soccerPlayers.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>cancel</from-outcome>
+            <to-view-id>/soccerPlayers/list-soccerPlayers.xhtml</to-view-id>
+        </navigation-case>
+        
+    </navigation-rule>
+    
+    <navigation-rule>
+        
+        
+        <from-view-id>/soccerPlayers/list-soccerPlayers.xhtml</from-view-id>
+        
+        <navigation-case>
+            <from-outcome>go</from-outcome>
+            <to-view-id>/soccerPlayers/form-soccerPlayers.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>edit</from-outcome>
+            <to-view-id>/soccerPlayers/form-soccerPlayers.xhtml</to-view-id>
+        </navigation-case>
+        
+    </navigation-rule>
+     
+     
+       <navigation-rule>
+           
+           
+         <from-view-id>/login.xhtml</from-view-id>
+         
+        <navigation-case>
+            <from-outcome>Correct</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>Incorrect</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+        </navigation-case>
+        
+    </navigation-rule>  
+</faces-config>

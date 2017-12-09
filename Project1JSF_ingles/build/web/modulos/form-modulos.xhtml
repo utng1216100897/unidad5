@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>#{str.moduleFormTitle}</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="/templates/template.xhtml">
+            <ui:define name="contenido">
+                <h2>#{str.moduleFormHeader}</h2>
+                <p:fieldset legend="#{str.moduleLegendForm}">
+                <h:form>
+                    <p:inputText placeholder="#{str.moduleNamePrompt}" value="#{moduloBean.modulo.nombre}"></p:inputText>
+                    <p:inputText placeholder="#{str.modulePathPrompt}" value="#{moduloBean.modulo.ruta}"></p:inputText>
+                    <p:commandButton value="#{str.buttonSave}" action="#{moduloBean.guardar()}"></p:commandButton>
+                    <p:commandButton value="#{str.buttonDelete}" action="#{moduloBean.eliminar()}"></p:commandButton>
+                    <p:commandButton value="#{str.buttonCancel}" action="#{moduloBean.cancelar()}"></p:commandButton>
+                </h:form>
+                </p:fieldset>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

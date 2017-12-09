@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+        <h:head>
+             <title>#{str.moduleListTitle}</title>
+        </h:head>
+
+        <h:body>
+            <ui:composition template="/templates/template.xhtml">
+                <ui:define name="cont">
+                    <h2>#{str.moduleListTitle}</h2>
+                    <h:form>
+                        <p:commandButton value="#{str.buttonAdd}" action="#{moduleBean.go()}"></p:commandButton>
+                    </h:form>
+                    <p:dataTable value="#{moduleBean.modules}" var="m">
+                        <p:column headerText="#{str.action}">
+                            <h:form>
+                                <p:commandButton value="#{str.buttonEdit}" action="#{moduleBean.edit(m)}"></p:commandButton>
+                            </h:form>
+                        </p:column>
+                        <p:column headerText="#{str.moduleNameHeader}">
+                            <p:outputLabel value="#{m.name}"></p:outputLabel>
+                        </p:column>
+                        <p:column headerText="#{str.modulePathHeader}">
+                            <p:outputLabel value="#{m.path}"></p:outputLabel>
+                        </p:column>
+                    </p:dataTable>
+                </ui:define>
+            </ui:composition>
+        </h:body>
+</html>
+

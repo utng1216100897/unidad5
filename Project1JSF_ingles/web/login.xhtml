@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:b="http://bootsfaces.net/ui"
+       xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    
+    <h:head>
+        <title>#{str.loginTitle}</title>
+        <style type="text/css">
+            .form-signin {
+                margin: 0 auto;
+                max-width: 330px;
+                padding: 15px;
+            }
+        </style>
+    </h:head>
+    <h:body style="padding-top: 60px; background-color: #add;">
+       <b:container>
+        <h:form  styleClass="form-signin" prependId="false">
+             <h2 class="form-signin-heading">Please sign in</h2>
+            <b:panelGrid columns="1">
+               
+                               
+                               
+                <b:inputText value="#{userBean.user.nameUser}"
+                             id="user" placeholder="User Name" >
+                     <f:facet name="prepend">
+                        <b:icon name="user" />
+                    </f:facet>
+                </b:inputText>
+                             
+                           
+               
+                <b:inputText
+                    value="#{userBean.user.password}"
+                    id="password" placeholder="Password" type="password">
+                
+                 <f:facet name="prepend">
+                        <b:iconAwesome name="key" />
+                    </f:facet>
+                </b:inputText>
+                    
+               
+                
+                     <b:commandButton look = "primary btn-block" value="Sign In" icon="log-in" size="lg" action="#{userBean.login()}"/>
+            </b:panelGrid>
+        </h:form>
+       </b:container>
+    </h:body>
+</html>
+
+
+

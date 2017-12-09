@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>#{str.teamFormTitle}</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="/templates/template.xhtml">
+            <ui:define name="cont">
+                <h2>#{str.teamFormHeader}</h2>
+                <p:fieldset legend="#{str.teamLegendForm}">
+                <h:form>
+                    <p:inputText placeholder="#{str.teamNamePrompt}" value="#{teamBean.team.name}"></p:inputText>
+                    <p:commandButton value="#{str.buttonSave}" action="#{teamBean.save()}"></p:commandButton>
+                    <p:commandButton value="#{str.buttonDelete}" action="#{teamBean.delete()}"></p:commandButton>
+                    <p:commandButton value="#{str.buttonCancel}" action="#{teamBean.cancel()}"></p:commandButton>
+                </h:form>
+                </p:fieldset>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

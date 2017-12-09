@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+        <h:head>
+             <title>#{str.roleListTitle}</title>
+        </h:head>
+
+        <h:body>
+            <ui:composition template="/templates/template.xhtml">
+                <ui:define name="cont">
+                    <h2>#{str.roleListTitle}</h2>
+                    <h:form>
+                        <p:commandButton value="#{str.buttonAdd}" action="#{roleBean.go()}" />
+                    </h:form>
+                    <p:dataTable value="#{roleBean.roles}" var="r">
+                        <p:column headerText="#{str.action}">
+                            <h:form>
+                                <p:commandButton value="#{str.buttonEdit}" action="#{roleBean.edit(r)}" />
+                            </h:form>
+                        </p:column>
+                        <p:column headerText="#{str.roleNameHeader}">
+                            <p:outputLabel value="#{r.name}"></p:outputLabel>
+                        </p:column>
+                    </p:dataTable>
+                </ui:define>
+            </ui:composition>
+        </h:body>
+</html>

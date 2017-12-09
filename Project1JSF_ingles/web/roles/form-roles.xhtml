@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>#{str.roleFormTitle}</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="/templates/template.xhtml">
+            <ui:define name="cont">
+                <h2>#{str.roleFormHeader}</h2>
+                <p:fieldset legend="#{str.roleLegendForm}">
+                <h:form>
+                    <p:inputText placeholder="#{str.roleNamePrompt}" value="#{roleBean.role.name}"></p:inputText>
+                    <p:commandButton value="#{str.buttonSave}" action="#{roleBean.save()}"></p:commandButton>
+                    <p:commandButton value="#{str.buttonDelete}" action="#{roleBean.delete()}"></p:commandButton>
+                    <p:commandButton value="#{str.buttonCancel}" action="#{roleBean.cancel()}"></p:commandButton>
+                </h:form>
+                </p:fieldset>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+        <h:head>
+             <title>#{str.listTitle}</title>
+        </h:head>
+
+        <h:body>
+            <ui:composition template="/templates/template.xhtml">
+                <ui:define name="cont">
+                    <h2>#{str.soccerPlayerListTitle}</h2>
+                    <h:form>
+                        <p:commandButton value="#{str.buttonAdd}" action="#{soccerPlayerBean.go()}"></p:commandButton>
+                    </h:form>
+                    <p:dataTable value="#{soccerPlayerBean.soccerPlayers}" var="u">
+                        <p:column headerText="#{str.action}">
+                            <h:form>
+                                <p:commandButton value="#{str.buttonEdit}" action="#{soccerPlayerBean.edit(u)}"></p:commandButton>
+                            </h:form>
+                        </p:column>
+                     
+                        <p:column headerText="#{str.soccerPlayernameHeader}">
+                            <p:outputLabel value="#{u.nameSoccerPlayer}"></p:outputLabel>
+                        </p:column>
+                        <p:column headerText="#{str.lastNameHeader}">
+                            <p:outputLabel value="#{u.lastNameSoccerPlayer}"></p:outputLabel>
+                        </p:column>
+                        <p:column headerText="#{str.nacionalityHeader}">
+                            <p:outputLabel value="#{u.nacionalitySoccerPlayer}"></p:outputLabel>
+                        </p:column>
+                        
+                        <p:column headerText="#{str.teamNameHeader}">
+                            <p:outputLabel value="#{u.team.name}"></p:outputLabel>
+                        </p:column>
+                    </p:dataTable>
+                </ui:define>
+            </ui:composition>
+        </h:body>
+</html>
+

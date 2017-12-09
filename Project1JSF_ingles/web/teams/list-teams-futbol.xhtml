@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+       xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://primefaces.org/ui">
+    
+
+        <h:head>
+             <title>#{str.teamListTitle}</title>
+              <title>#{str.loginTitle}</title>
+        <style type="text/css">
+            .form-signin {
+                margin: 0 auto;
+                max-width: 330px;
+                padding: 15px;
+            }
+           </style>
+        </h:head>
+
+        <h:body style="padding-top: 60px; background-color: #add;">
+            <ui:composition template="/templates/template.xhtml">
+                <ui:define name="cont">
+                    <h2>#{str.teamListTitle}</h2>
+                    <h:form>
+                        <p:commandButton value="#{str.buttonAdd}" action="#{teamBean.go()}" />
+                    </h:form>
+                    <p:dataTable value="#{teamBean.teams}" var="e">
+                        <p:column headerText="#{str.action}">
+                            <h:form>
+                                <p:commandButton value="#{str.buttonEdit}" action="#{teamBean.edit(e)}" />
+                            </h:form>
+                        </p:column>
+                        <p:column headerText="#{str.teamNameHeader}">
+                            <p:outputLabel value="#{e.name}"></p:outputLabel>
+                        </p:column>
+                    </p:dataTable>
+                </ui:define>
+            </ui:composition>
+        </h:body>
+</html>

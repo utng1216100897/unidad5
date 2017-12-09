@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+        <h:head>
+             <title>#{str.formTitle}</title>
+        </h:head>
+
+        <h:body>
+            <ui:composition template="/templates/template.xhtml">
+                <ui:define name="cont">
+                    <h2>#{str.soccerPlayerformHeader}</h2>
+                    <p:fieldset legend="#{str.legendForm}">
+                         <h:form>
+                             <h:panelGrid columns="1">
+                                 <p:inputText placeholder="#{str.soccerPlayerNamePrompt}" value="#{soccerPlayerBean.soccerPlayer.nameSoccerPlayer}"></p:inputText>
+                                  <p:inputText placeholder="#{str.soccerPlayerLastNamePrompt}" value="#{soccerPlayerBean.soccerPlayer.lastNameSoccerPlayer}"></p:inputText>
+                                   <p:inputText placeholder="#{str.soccerPlayerNacionalityPrompt}" value="#{soccerPlayerBean.soccerPlayer.nacionalitySoccerPlayer}"></p:inputText>
+                                 
+                                 <p:selectOneMenu value="#{soccerPlayerBean.soccerPlayer.team.idTeam}">
+                                     <f:selectItems value="#{soccerPlayerBean.teams}" var="r" itemLabel="#{r.name}" itemValue="#{r.idTeam}"></f:selectItems>                                     
+                                 </p:selectOneMenu>                                 
+                             </h:panelGrid>
+                             <p:commandButton value="#{str.buttonSave}" action="#{soccerPlayerBean.save()}" />
+                             <p:commandButton value="#{str.buttonDelete}" action="#{soccerPlayerBean.delete()}" />
+                             <p:commandButton value="#{str.buttonCancel}" action="#{soccerPlayerBean.cancel()}" />
+                          </h:form>
+                    </p:fieldset>
+                </ui:define>
+            </ui:composition>
+        </h:body>
+</html>

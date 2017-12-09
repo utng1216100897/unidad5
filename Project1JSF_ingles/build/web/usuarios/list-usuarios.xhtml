@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+        <h:head>
+             <title>#{str.listTitle}</title>
+        </h:head>
+
+        <h:body>
+            <ui:composition template="/templates/template.xhtml">
+                <ui:define name="contenido">
+                    <h1>#{str.listTitle}</h1>
+                    <h:form>
+                        <p:commandButton value="#{str.buttonAdd}" action="#{usuarioBean.iniciar()}"></p:commandButton>
+                    </h:form>
+                    <p:dataTable value="#{usuarioBean.usuarios}" var="u">
+                        <p:column headerText="#{str.action}">
+                            <h:form>
+                                <p:commandButton value="#{str.buttonEdit}" action="#{usuarioBean.editar(u)}"></p:commandButton>
+                            </h:form>
+                        </p:column>
+                        <p:column headerText="#{str.nameHeader}">
+                            <p:outputLabel value="#{u.nombreUsuario}"></p:outputLabel>
+                        </p:column>
+                        <p:column headerText="#{str.passwordHeader}">
+                            <p:outputLabel value="#{u.contrasenia}"></p:outputLabel>
+                        </p:column>
+                        <p:column headerText="#{str.rolNameHeader}">
+                            <p:outputLabel value="#{u.rol.nombre}"></p:outputLabel>
+                        </p:column>
+                    </p:dataTable>
+                </ui:define>
+            </ui:composition>
+        </h:body>
+</html>
